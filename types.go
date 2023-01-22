@@ -10,20 +10,20 @@ import (
 type OperationStatus string
 
 const (
-	OperationStatusPending   OperationStatus = "Pending"
-	OperationStatusOnGoing   OperationStatus = "OnGoing"
-	OperationStatusCompleted OperationStatus = "Completed"
-	OperationStatusPostponed OperationStatus = "Postponed"
-	OperationStatusCancelled OperationStatus = "Cancelled"
+	OperationStatusPending   OperationStatus = "PENDING"
+	OperationStatusOnGoing   OperationStatus = "ON GOING"
+	OperationStatusCompleted OperationStatus = "COMPLETED"
+	OperationStatusPostponed OperationStatus = "POSTPONED"
+	OperationStatusCancelled OperationStatus = "CANCELLED"
 )
 
 func (e OperationStatus) IsValid() bool {
 	validValues := []string{
-		"Pending",
-		"OnGoing",
-		"Completed",
-		"Postponed",
-		"Cancelled",
+		"PENDING",
+		"ON GOING",
+		"COMPLETED",
+		"POSTPONED",
+		"CANCELLED",
 	}
 
 	for _, val := range validValues {
@@ -36,11 +36,11 @@ func (e OperationStatus) IsValid() bool {
 
 func (e OperationStatus) ValidValues() []string {
 	return []string{
-		"Pending",
-		"OnGoing",
-		"Completed",
-		"Postponed",
-		"Cancelled",
+		"PENDING",
+		"ON GOING",
+		"COMPLETED",
+		"POSTPONED",
+		"CANCELLED",
 	}
 }
 
