@@ -305,4 +305,8 @@ func (e {{.TypeName}}) Value() (driver.Value, error) {
 	}
 	return string(e), nil
 }
+
+func (e {{.TypeName}}) String() string {
+	return string(e)
+}
 `
