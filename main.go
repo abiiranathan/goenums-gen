@@ -173,6 +173,7 @@ func main() {
 
 		buffer.WriteRune(char)
 
+		// ALTER TYPE
 		// Check if the buffer starts with "CREATE TYPE"
 		cleanBuffer := strings.ToUpper(strings.TrimSpace(buffer.String()))
 		if len(cleanBuffer) >= 11 {
@@ -268,13 +269,7 @@ const (
 )
 
 func (e {{.TypeName}}) IsValid() bool {
-	validValues := []string{
-		{{range $val := $values -}}
-       		"{{$val -}}",
-		{{end -}}
-	}
-
-	for _, val := range validValues {
+	for _, val := range e.ValidValues() {
 		if val == string(e) {
 			return true
 		}
